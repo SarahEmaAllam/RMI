@@ -1,5 +1,10 @@
 # 3. Java Sockets and RMI
 
+Submission by Group 11: <br/>
+Krishan Jokhan, s3790746 <br/>
+Sarah-Emanuela Allam, s3747328 <br/>
+Shrushti Kaul, s5288843 <br/>
+
 ## How to compile
 Compilation is done with Apache Ant.
 
