@@ -1,5 +1,8 @@
 # 3. Java Sockets and RMI
 
+## Binaries
+There are two JAR files for each question, for server and for the client. These are in the `jar` folders per server and client. Run with `java -jar <file>.jar`. Server should first be run.
+
 ## How to compile
 Compilation is done with Apache Ant.
 
