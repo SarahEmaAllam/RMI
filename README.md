@@ -21,11 +21,11 @@ given by the server.
 
 ## a
 ### aClient.java
-This is the client class. The client opens a socket on localhost, port 5000. It consists of a Scanner object which reads the input from the terminal, a BufferedReader which accepts an InputStreamReader from the socket stream, and a PrintWriter which outputs the socket's stream. The PrintWriter output stream print the incoming message. These functionalities are wrapped in a loop which continues to expect user input.
+This is the client class. The client tries to connect to the server through port 5000, where is server is waiting for connections, once an input has been taken via the terminal (using the Scanner object). The PrintWriter object helps streaming the client input to the server, once connected. The BufferedReader object with the InputStreamReader are responsible for capturing the response given back from the server. This response is print in the terminal for the user to see.
 
 ### aServer.java
 
-This is the server class. The server opens a socket on localhost, port 5000. The server has the same input and output stream setup as the Client (BufferedReader, PrintWriter). In addition, the server has the printAndCountLetters() function which accepts the Client's incoming user input on the same socket and counts the number of characters in the String. 
+This is the server class. The Server socket is created on localhost with port 5000 and it listens from the port for any forthcoming requests from any client. The server has the same input and output stream setup as the Client (BufferedReader, PrintWriter). In addition, the server has the printAndCountLetters() function which accepts the Client's incoming user input on the same socket and counts the number of alphabetic characters in the String and returns that value back to the client. 
 
 ## b
 ### Compute
