@@ -1,5 +1,10 @@
 # 3. Java Sockets and RMI
 
+Submission by Group 11: <br/>
+Krishan Jokhan, s3790746 <br/>
+Sarah-Emanuela Allam, s3747328 <br/>
+Shrushti Kaul, s5288843 <br/>
+
 ## Binaries
 There are two JAR files for each question, for server and for the client. These are in the `jar` folders per server and client. Run with `java -jar <file>.jar`. Server should first be run.
 
