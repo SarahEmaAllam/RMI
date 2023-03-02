@@ -1,0 +1,24 @@
+<project>
+    <target name="clean">
+        <delete dir="classes" />
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="classes" />
+        <javac srcdir="src" destdir="classes" />
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="jar" />
+        <jar destfile="jar/server.jar" basedir="classes">
+            <manifest>
+                <attribute name="Main-Class"
+                           value="a.server.src.aServer" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="jar/server.jar" fork="true" />
+    </target>
+</project>

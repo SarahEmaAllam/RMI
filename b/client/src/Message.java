@@ -1,6 +1,7 @@
-package client;
+package b.client.src;
 
-import server.Task;
+import b.server.src.Task;
+
 import java.io.Serializable;
 import java.util.Scanner;
 
