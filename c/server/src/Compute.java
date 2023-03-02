@@ -1,4 +1,4 @@
-package cKPJ.server.src;
+package c.server.src;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

@@ -1,4 +1,4 @@
-package cKPJ.server.src;
+package c.server.src;
 
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;

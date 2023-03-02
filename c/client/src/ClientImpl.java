@@ -1,6 +1,6 @@
-package cKPJ.client.src;
+package c.client.src;
 
-import cKPJ.server.src.Compute;
+import c.server.src.Compute;
 
 import java.rmi.RemoteException;
 import java.util.Scanner;
