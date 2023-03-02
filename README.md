@@ -34,7 +34,7 @@ Compute is an interface extended by the server bServer. Compute also extends the
 ### Task
 Task is another interface and it specifies the parameter type (Task) which the Compute interface takes in its method.
 ### bServer
-The server creates the initial remote object and exports the remote object when the client makes a remote method invocation for the server to execute a task on the object. The class has a constructor which initializes the server as a Java Object, by calling the super() method. The bServer class has a main() method where it implements the remote interfaces 
+The server creates the initial remote object and exports the remote object when the client makes a remote method invocation for the server to execute a task on the object. The class has a constructor which initializes the server as a Java Object, by calling the super() method. The bServer class has a main() method where it exports the server instance as a remote object which can receive incvations of the implemented interface methods from the client. The main() functions also creates a registry, a remote object naming service, which informs the client of the reference to the remote object by name.
 ### Task
 Task is a non-remote interface implemented by the client bClient (and also by the s, see aboveerver). It specifies what generic task T should the server execute with the execute() method. 
 ### bClient
