@@ -5,7 +5,7 @@
 
     <target name="compile" depends="clean">
         <mkdir dir="classes" />
-        <javac srcdir="src" destdir="classes" />
+        <javac srcdir="src:../client/src" destdir="classes" />
     </target>
 
     <target name="jar" depends="compile">
