@@ -9,6 +9,8 @@ import java.rmi.registry.Registry;
 
 public class cClient {
     public static void main(String[] args) throws RemoteException, NotBoundException {
+
+        // find the RPC from the server
         String name = "Compute";
         Registry registry = LocateRegistry.getRegistry("localhost");
         Compute comp = (Compute) registry.lookup(name);

@@ -8,14 +8,23 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Main implementation of the client
+ * */
 public class ClientImpl {
 
     private final Compute comp;
 
+    /**
+     * @param comp computation task to execute remotely
+     * */
     public ClientImpl(Compute comp) {
         this.comp = comp;
     }
 
+    /**
+     * Ask for input and run the RPC
+     * */
     public void run() {
         try {
             Scanner scanner = new Scanner(System.in);
@@ -28,11 +37,17 @@ public class ClientImpl {
         }
     }
 
-
-    private volatile boolean finished = false;
-    private volatile int count = 0;
     /**
-     * At-least-once implementation
+     * Shared variable between threads that tracks whether one of the executions finished
+     * */
+    private volatile boolean finished = false;
+    /**
+     * Shared variable between threads that holds the execution result
+     * */
+    private volatile int count = 0;
+
+    /**
+     * At-least-once implementation. Call RPC every second until one call received the result.
      * */
     public void countAtLeastOnce(String message) {
         ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
@@ -50,7 +65,9 @@ public class ClientImpl {
         }, 0, 1, TimeUnit.SECONDS);
     }
 
-
+    /**
+     * Execute RPC and, after finishing, set the volatile tracker to "true"
+     * */
     private void countAndSet(String message) throws RemoteException {
         count = comp.printAndCountLetters(message);
         finished = true;
