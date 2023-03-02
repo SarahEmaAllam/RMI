@@ -22,12 +22,14 @@ public class bServer implements Compute {
         //     System.setSecurityManager(new SecurityManager());
         // }
         try {
+            
             String name = "Compute";
             Compute engine = new bServer();
             Compute stub =
                 (Compute) UnicastRemoteObject.exportObject(engine, 0);
-            Registry registry = LocateRegistry.getRegistry();
-            registry.rebind(name, stub);
+            // Registry registry = LocateRegistry.getRegistry();
+            Registry registry = LocateRegistry.createRegistry(1099);
+            registry.bind(name, stub);
             System.out.println("bServer bound");
         } catch (Exception e) {
             System.err.println("bServer exception:");

@@ -12,7 +12,7 @@ public class bClient {
         // }
         try {
             String name = "Compute";
-            Registry registry = LocateRegistry.getRegistry(args[0]);
+            Registry registry = LocateRegistry.getRegistry("localhost");
             Compute comp = (Compute) registry.lookup(name);
 
             // Scanner scanner = new Scanner(System.in);
